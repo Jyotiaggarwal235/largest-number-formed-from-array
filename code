@@ -1,0 +1,25 @@
+def get_largest_num(x):
+    for i in range(len(x)):
+        for j in range(i+1,len(x)):
+            if not special_larger(x[i],x[j]):
+                x[i],x[j]=x[j],x[i]
+
+    y=(str(k) for k in x)
+    str_y=''.join(y)
+    return int(str_y)
+
+def special_larger(a,b):
+    xf=(str(a)+str(b))
+    yf=(str(a)+str(b))
+    if xf>yf:
+        return  1
+    else:
+        return  0
+
+n=int(input())
+x=[]
+for i in range (0,n):
+    ele=int(input())
+    x.append(ele)
+print(x)
+print(get_largest_num(x))
